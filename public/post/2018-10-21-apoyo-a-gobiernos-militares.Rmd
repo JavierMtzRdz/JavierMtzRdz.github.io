@@ -1,0 +1,366 @@
+---
+title: Apoyo a gobiernos militares
+author: Javier Martínez Rodríguez
+image: "img/portfolio/Mapa_apoyo_militares.jpeg" #Esto es añadido mio para incorporar otros elementos
+writer: "Javier Martínez Rodríguez" #Esto es añadido mio para incorporar otros elementos
+date: '2018-10-21'
+slug: apoyo-a-gobiernos-militares
+categories:
+  - R
+  - Gráficas
+  - Mapas
+tags:
+  - Militares
+  - Gráficas
+  - R Markdown
+  - Mapas
+  - Gobiernos
+  - Opinión pública
+---
+Hola
+```{r include=FALSE}
+#Cargar paquetes y temas
+library(pacman)
+p_load(tidyverse, ggthemes, readxl, readr, scales)
+
+tema_propio <- theme_minimal() +
+  theme(axis.line = element_line(size = 0.3),
+        plot.title = element_text(hjust=0.5, 
+                                  size = 14),
+        plot.subtitle = element_text(hjust=0.5,
+                                     size = 12,
+                                     color = "gray50"),
+        plot.caption =  element_text(color = "gray50",
+                                     size=10, 
+                                     hjust=0),
+        panel.grid = element_line(linetype = "longdash"), 
+#        panel.grid = element_blank(),
+        panel.grid.minor = element_blank(),
+        strip.background = element_rect(fill="gray99", 
+                                        linetype="blank"),
+        panel.border = element_rect(color = "gray98",
+                                    fill=NA),
+        rect = element_rect(fill = "transparent")) 
+```
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+apoyo_democracia <- read_excel("~/R/JJplot_pagina/data/Apoyo a la democracia (Preferible).xlsx") %>% 
+  gather(key = "year", value = "ap_demo", -cname)
+
+apoyo_democracia %>% 
+  group_by(year) %>% 
+  summarise(ap_demo = mean(ap_demo, na.rm = T)) %>% 
+  mutate(cname = "Región") %>% 
+  ggplot(mapping = aes(x = as.numeric(year), y = ap_demo)) +
+    labs(x = "Año", 
+       y = "Porcentaje",
+       title = "Apoyo a la democracia en América Latina", 
+       subtitle = "Promedio porcentual de personas que considerán que el sistema \n democrático es preferible en América Latina",
+       caption = "\nDatos: Latinobarómetro | Elaboración: Javier Martínez | JJplot") +
+  geom_path(color = "#283559", size = 1.5) +
+  ylim(20, 70) +
+  tema_propio
+
+
+apoyo_democracia %>% 
+  filter(cname != "España" &
+           cname != "Panama" &
+           cname != "Dominican Republic") %>% 
+  ggplot(mapping = aes(x = as.numeric(year), y = ap_demo)) +
+  geom_path(color = "#283559") +
+  ylim(20, 80) +
+  facet_wrap( ~ cname ) +
+    labs(x = "Año", 
+       y = "Porcentaje",
+       title = "Apoyo a la democracia en América Latina", 
+       subtitle = "Porcentaje por país de personas que considerán que el sistema \ndemocrático es preferible",
+       caption = "\nDatos: Latinobarómetro | Elaboración: Javier Martínez | JJplot") +
+  tema_propio +
+  theme(axis.text.x=element_text(angle = 30))
+
+
+```
+ 
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+library(sp)
+library(rgeos)
+library(geojsonio)
+library(broom)
+#Aquí genero los poligonos de cada país. 
+
+# Geospatial data available in the geojson format!
+#install.packages("geojsonio")
+
+paises <- geojson_read("https://raw.githubusercontent.com/johan/world.geo.json/master/countries.geo.json",  what = "sp")
+ 
+# simplify the polgons a tad (tweak 0.00001 to your liking)
+paises_simp <- gSimplify(paises, tol = 0.00001)
+#Conservo el nombre
+paises_nom = SpatialPolygonsDataFrame(paises_simp, data=paises@data)
+# I need to fortify the data AND keep trace of the commune code! (Takes 2 minutes)
+#install.packages("broom")
+
+paises_fortified <- tidy(paises_nom, region = "name")
+
+paises_fortified <- paises_fortified %>% 
+  mutate(id = fct_recode(id,
+                            "Brasil"  =  "Brazil",
+                            "República Dominicana"  = "Dominican Republic",
+                            "México"  = "Mexico",
+                            "Panamá"  = "Panama",
+                            "Perú"  = "Peru"))
+ 
+```
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+#Aquí genero ordeno los datos del Latinobarómetro
+load("~/R/JJplot_pagina/data/LAT_Latinobarometro2013_r/Latinobarometro2013.rdata")
+
+lb_select <- Latinobarometro2013 %>% 
+  filter(idenpa != 724) %>%
+  dplyr::select(idenpa,
+                    P43TGB.D, #De acuerdo gobierno militar
+                    S1, #Cree subirán precios
+                    S2.A, #Dificultades con luz
+                    S2.B, #Dificultades con comida
+                    S8, #Clase social
+                    S10, #sexo
+                    S11, #edad
+                    S14, #Religión
+                    S17, #Años de estudio
+                    S27, #Apreciación nivel socioeconómico
+                    P28TGB.A, #confianza en FFAA
+                    P13TGB.A, #Satisfacción con la democrácia
+                    P3STGBS, #Situación económica del país?
+                    P41ST)  #ideología
+
+lb_select <- as.data.frame(lb_select)
+
+
+lb_select$idenpa <- as.factor(lb_select$idenpa)
+lb_select$P43TGB.D <- car::recode(lb_select$P43TGB.D,
+                                  "c(1, 2) = 1; c(3, 4) = 0;c(-4, -3, -2) = NA")
+# lb_select$P43TGB.D <- car::recode(lb_select$P43TGB.D,
+#                                   "c(-4, -3, -2) = NA")
+lb_select$S1 <- car::recode(lb_select$S1,
+                             "c(-2, -1) = NA")
+lb_select$S2.A <- car::recode(lb_select$S2.A,
+                            "c(-4, -3, -2, -1) = NA")
+lb_select$S2.B <- car::recode(lb_select$S2.B,
+                              "c(-4, -3, -2, -1) = NA")
+lb_select$S8 <- car::recode(lb_select$S8,
+                              "c(-4, -3, -2, -1) = NA")
+lb_select$S14 <- car::recode(lb_select$S14,
+                             "c(-4, -3, -2, -1, 96) = NA ; 97 = 0")
+lb_select$S17 <- car::recode(lb_select$S17,
+                            "c(-4, -3, -2, -1) = NA")
+lb_select$S27 <- car::recode(lb_select$S27,
+                             "c(-4, -3, -2, -1) = NA")
+lb_select$S10 <- car::recode(lb_select$S10,
+                             "2 = 0; 1 = 1")
+lb_select$P28TGB.A <- car::recode(lb_select$P28TGB.A,
+                                  "c(-4, -3, -2, -1) = NA")
+#Apoyo a la demmocrácia
+lb_select$P13TGB.A <- car::recode(lb_select$P13TGB.A,
+                                  "c(1, 2) = 1; c(3, 4) = 0; c(-4, -3, -2, -1) = NA")
+# prop.table(table(lb_select$P13TGB.A))
+lb_select$P3STGBS <- car::recode(lb_select$P3STGBS,
+                                  "c(-4, -3, -2, -1) = NA")
+lb_select$P41ST <- car::recode(lb_select$P41ST,
+                                 "c(-8, -4, -3, -2, -1) = NA")
+lb_select_selec <- lb_select %>%  
+  group_by(idenpa) %>% 
+  summarise(gob_mil = sum(P43TGB.D, na.rm = T),
+            tot = n()) %>% 
+  mutate(mil_por = (gob_mil/tot),
+         mil_por = round(mil_por, 3),
+         idenpa = fct_recode(idenpa,
+                            "Argentina"  =  "32",
+                            "Bolivia"  =  "68",
+                            "Brasil"  =  "76",
+                            "Colombia"  = "152",
+                            "Costa Rica"  = "170",
+                            "Chile"  = "188",
+                            "República Dominicana"  = "214",
+                            "Ecuador"  = "218",
+                            "El Salvador"  = "222",
+                            "Guatemala"  = "320",
+                            "Honduras"  = "340",
+                            "México"  = "484",
+                            "Nicaragua"  = "558",
+                            "Panamá"  = "591",
+                            "Paraguay"  = "600",
+                            "Perú"  = "858",
+                            "Uruguay"  = "604",
+                            "Venezuela"  = "862" )) %>% 
+  ungroup()
+
+lb_select_selec$mil_por[lb_select_selec$mil_por == 0.000] <- 0.01
+
+```
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+paises_fortified_merge = paises_fortified %>%
+  left_join(lb_select_selec, by=c("id"="idenpa")) %>% 
+  filter(!(is.na(mil_por)))
+
+library(viridis)
+ggplot() +
+  geom_polygon(data = paises_fortified_merge, 
+               aes(fill = mil_por, 
+                   x = long, 
+                   y = lat, 
+                   group = group), 
+               size = 0, 
+               alpha = 0.9) +
+  theme_void() +
+  scale_fill_viridis(option = "cividis",
+    labels=scales::percent,
+    direction = -1,
+    name = "Porcentaje",
+    #Esto lo hago para mantener la escala continua
+    guide = guide_colorbar(direction = "horizontal",
+      barheight = unit(2, units = "mm"),
+      barwidth = unit(50, units = "mm"),
+      draw.ulim = F,
+      title.position = 'top',
+      # some shifting around
+      title.hjust = 0.5,
+      label.hjust = 0.5)) +
+  labs(title = "Apoyo a gobiernos militares en América Latina",
+    subtitle = "Porcentaje de personas de acuerdo con el establecimiento de \nun gobierno militar (suma de mucho y algo de apoyo)",
+    caption = "\nDatos: Latinobarómetro (2013) | Elaboración: Javier Martínez | JJplot") +
+  coord_map() +
+  theme(text = element_text(color = "#22211d"),
+    legend.position = c(1.25, 0.25),
+      legend.text.align = 0,
+      legend.background = element_rect(fill = alpha('white', 0.0)),
+      legend.text = element_text(hjust = 0, color = "#4e4d47"),
+      plot.title = element_text(hjust=0.5, 
+                                  size = 14),
+        plot.subtitle = element_text(hjust=0.5,
+                                     size = 12,
+                                     color = "gray50"),
+        plot.caption =  element_text(color = "gray50",
+                                     size=10, 
+                                     hjust=0.15),
+      legend.title = element_text(size = 8),
+      panel.border = element_blank()) 
+
+```
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+# Aquí hago un diagrama de flujo del apoyo a la democrácia al apoyo a los gobiernos militares
+library(ggalluvial)
+library(stringr)
+library(ggthemes)
+
+ lat <- Latinobarometro2013 %>% 
+  select(P43TGB.D, P13TGB.A) %>% 
+  mutate(P43TGB.D = fct_recode(factor(P43TGB.D),
+                             "Muy de acuerdo" = "1",
+                             "De acuerdo" = "2",
+                             "En desacuerdo" = "3",
+                             "Muy en desacuerdo" = "4",
+                             "NS/NC" = "-1",
+                             "NS/NC" = "-2",
+                             "NS/NC" = "-3",
+                             "NS/NC" = "-4"),
+         P13TGB.A = fct_recode(factor(P13TGB.A),
+                             "Muy de acuerdo" = "1", #Pongo los espacios para tener diferentes niveles
+                             "De acuerdo" = "2",
+                             "En desacuerdo" = "3",
+                             "Muy en desacuerdo" = "4",
+                             "NS/NC" = "-1",
+                             "NS/NC" = "-2",
+                             "NS/NC" = "-3",
+                             "NS/NC" = "-4")) %>% 
+   filter(P43TGB.D != "NS/NC" &
+            P13TGB.A != "NS/NC") 
+ 
+tabla <- as.data.frame(table(lat$P43TGB.D, lat$P13TGB.A)) %>% 
+  transmute(P43TGB.D = Var1,
+            P13TGB.A = Var2,
+            freq = Freq) %>%
+   filter(freq > 1)
+tabla$P43TGB.D <- factor(tabla$P43TGB.D, levels = c("Muy de acuerdo",
+                             "De acuerdo",
+                             "En desacuerdo",
+                             "Muy en desacuerdo",
+                             "NS/NC"))
+tabla$P13TGB.A <- factor(tabla$P13TGB.A, levels = c("Muy de acuerdo",
+                             "De acuerdo",
+                             "En desacuerdo",
+                             "Muy en desacuerdo",
+                             "NS/NC"))
+# 
+# tabla %>% 
+#   ggplot(aes(y = freq, axis1 = P13TGB.A, axis2 = P43TGB.D)) +
+#   geom_alluvium(aes(fill = P13TGB.A)) + 
+#   geom_stratum(fill = "#414558", color = "white") +
+#   geom_text(stat = "stratum", label.strata = TRUE, color = "white") +
+#   scale_fill_manual(values = c("#ffea46", "#BCAF6F",
+#                "#414D6B", "#00204D", 
+#                "grey")) +
+#   scale_color_manual(values  = c("#ffea46", "#BCAF6F", 
+#                "#414D6B", "#00204D", 
+#                "grey")) +
+#   theme_void()+
+#   guides(fill = FALSE) +
+#   scale_x_continuous(breaks = 1:2, 
+#                      labels = c("Apoyo a la \ndemocracia", "\nApoyo a\ngobiernos militar"), 
+#                      position = "top") +
+#   theme(axis.text.x = element_text(size = 12, face = "bold")) 
+
+
+#Otra prueba
+
+tabla2 <- tabla %>% 
+  mutate(id = row_number()) %>% 
+  gather(key = "variable", value = "resp", -id, -freq) %>% 
+  mutate(resp = factor(resp))
+tabla2$resp <- factor(tabla2$resp, levels = c("Muy de acuerdo",
+                             "De acuerdo",
+                             "En desacuerdo",
+                             "Muy en desacuerdo",
+                             "NS/NC"))
+  
+
+tabla2 %>% 
+  ggplot(aes(y = freq, x = variable, stratum = resp, alluvium = freq, fill = resp)) +
+  #geom_alluvium(aes(fill = resp), na.rm = TRUE) +
+  geom_stratum(color = NA) +
+  geom_flow(stat = "alluvium") + 
+  scale_fill_viridis(discrete=TRUE,
+                     option = "cividis")  +
+  geom_label(stat = "stratum", label.strata = TRUE,
+             fill = "white", alpha = 0.5, color = NA) +
+  geom_text(stat = "stratum", label.strata = TRUE) +
+  theme_void() +
+  guides(fill = FALSE) +
+  scale_x_discrete(labels = c("\nApoyo a la \ndemocracia", "\nApoyo a\ngobiernos militar"),
+                   position = "top", expand = c(.15, .15)) +
+  labs(
+    title = "Apoyo a gobiernos militares en América Latina",
+    subtitle = "Porcentaje de personas de acuerdo con el \nestablecimiento de un gobierno militar",
+    caption = "\nDatos: Latinobarómetro (2013) | Elaboración: Javier Martínez | JJplot"
+    ) +
+  theme(axis.text.x = element_text(size = 11), 
+        plot.title = element_text(hjust=0.5, 
+                                  size = 14),
+        plot.subtitle = element_text(hjust=0.5,
+                                     size = 12,
+                                     color = "gray50"),
+        plot.caption =  element_text(color = "gray50",
+                                     size=10, 
+                                     hjust=0.15),
+        strip.background = element_rect(fill="gray99", 
+                                        linetype="blank"),
+        panel.border = element_rect(color = "gray98",
+                                    fill=NA))
+```
+
+
