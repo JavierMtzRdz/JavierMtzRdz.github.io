@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Travel on JJplot</title>
+    <link>/categories/travel/</link>
+    <description>Recent content in Travel on JJplot</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 05 Nov 2016 19:44:32 +0530</lastBuildDate>
+    
+	<atom:link href="/categories/travel/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Another Awesome Post</title>
+      <link>/post/work3/</link>
+      <pubDate>Sat, 05 Nov 2016 19:44:32 +0530</pubDate>
+      
+      <guid>/post/work3/</guid>
+      <description>&lt;p&gt;Fifth abundantly made Give sixth hath. Cattle creature i be don&amp;rsquo;t them.
+&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
