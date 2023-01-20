@@ -9,7 +9,7 @@ format:
     background-size: 100% 100%
     background-position: 100% 100%
     background-repeat: no-repeat
-    fontsize: 1.4em
+    fontsize: 1.3em
     css: ["Mi-tema.css"]
 title-slide-attributes:
     data-background-image: 06_imagenes/identidad-grafica/background.png
@@ -21,25 +21,123 @@ title-slide-attributes:
 
 ::: {.column width="70%"}
 
+<h2>Progreso y retroceso social en el sureste mexicano</h2>
+
+<h3><span style='color:#4f4f4f'>[Social Progress and Regression in the Mexican Southeast]</span></h3>
+ 
+
+* The text discusses the limitations of using economic indicators such as GDP per capita to evaluate the quality of life in a specific region, specifically the southeast region of Mexico, which is made up of the states of Oaxaca, Chiapas and Guerrero.
+* The text argues that to have a more complete understanding of the quality of life in each region, it is necessary to examine the economic situation of the region and complement it with measurements focused on evaluating human development such as the IPS (Social Progress Index) of Mexico.
+* This text analyzes with R the components of the IPS.
+
+![](06_imagenes/ips/ips-vs-pib-capita.png){fig-align="center" width="600"}
+
+:::
+
+::: {.column width="30%"}
+
+![](06_imagenes/ips/comp-ips.png){fig-align="center" width="500"}
+
+
+Source:
+<div style="text-indent: -40px; padding-left: 40px; font-size: 0.8em">
+<p><a href="https://federalismo.nexos.com.mx/2022/05/progreso-y-retroceso-social-en-el-sureste-mexicano/">
+Martínez Rodríguez, Javier. “Progreso y Retroceso Social en el Sureste Mexicano.” Nexos (Pacto Federal), May 18, 2022. 
+</a></p>
+
+</div>
+
+:::
+
+::::
+
+
+##  {fullscreen="true"}
+:::: {.columns}
+
+::: {.column width="70%"}
+
 <h2>Militarización, militarismo y corrupción</h2>
 
 <h3><span style='color:#4f4f4f'>[Militarization, Militarism and Corruption]</span></h3>
  
 
 * This chapter analyzes the opinion of Mexicans regarding the growing participation of the military in civilian tasks and the effects on the level of corruption.
-* It was found that a significant portion of the population perceives the military as one of the least corrupt institutions, leading to high support for militarization policies. However, this has not been due to the lesser perception of corruption in projects led by the army.
-* To obtain these results, a face-to-face survey of 1,500 people was designed, conducted, and analyzed.
+* It was found that a significant portion of the population perceives the military as one of the least corrupt institutions, leading to high support for militarization policies. However, this has not led to a lesser perception of corruption in projects conducted by the army.
+* It could have consequences for the democratic process and the balance of power between civilian and military institutions
+* To obtain these results, a face-to-face survey of 1,500 people was designed, conducted, and analyzed with {srvyr}.
 
-![](06_imagenes/identidad-grafica/mmc/militarizacion-guardia.png){fig-align="center" width="300"}
+::: {.column width="50%"}
+
+![](06_imagenes/mmc/militarizacion-guardia.png){fig-align="center" width="250"}
+:::
+
+::: {.column width="45%"}
+
+![](06_imagenes/mmc/perce-corrupcion-obras.png){fig-align="center" width="250"}
+
+:::
 
 :::
 
 ::: {.column width="30%"}
 
-![](06_imagenes/identidad-grafica/mmc/perce-corrupcion.png){fig-align="center" width="250"}
+![](06_imagenes/mmc/perce-corrupcion.png){fig-align="center" width="500"}
 
-![](06_imagenes/identidad-grafica/mmc/perce-corrupcion-obras.png){fig-align="center" width="250"}
 
+Source:
+<div style="text-indent: -40px; padding-left: 40px; font-size: 0.8em">
+<p><a href="https://contralacorrupcion.mx/encuesta-mcci-reforma-2022/files/Encuesta-MCCI-Reforma-2022-web.pdf">
+
+Martínez Rodríguez, Javier. “Militarización, Militarismo y Corrupción.” In Vivir la     Corrupción, Sufrir la Corrupción: 16 Ensayos Sobre la Vida Pública en México. Mexico City: MCCI, 2022.</a></p>
+
+</div>
+
+:::
+
+::::
+
+
+##  {fullscreen="true"}
+:::: {.columns}
+
+::: {.column width="70%"}
+
+<h2>Ley de Ingresos 2023: deuda billonaria histórica y supuestos poco creíbles</h2>
+
+<h3><span style='color:#4f4f4f'>[2023 Revenues Plan: national debt and hardly credible assumptions]</span></h3>
+ 
+
+* This article analyzes Mexico's public revenue plan for 2023.
+* It is expected to be the highest amount of expenditure of which there is record, along with a level of indebtedness that had not been observed in a decade (1.2 trillion pesos). However, macroeconomic projections indicate that next year's revenues could be below the plan, which could seriously compromise the compliance of 2023 expenditure goals.
+* These results were found after processing the open data of public finances and the maroeconomic expectations of the central bank of Mexico and other international institutions..
+
+::: {.column width="50%"}
+
+![](06_imagenes/revenues/ingresos-detalle-2023-mcci-2-2048x2048.png){fig-align="center" width="230"}
+:::
+
+::: {.column width="45%"}
+
+![](06_imagenes/revenues/indicadores-macro-2048x2048.png){fig-align="center" width="230"}
+
+:::
+
+:::
+
+::: {.column width="30%"}
+
+![](06_imagenes/revenues/estadisticas-petroleras-2048x2048.png){fig-align="center" width="200"}
+
+![](06_imagenes/revenues/sensibilidad-cambios-2048x2048.png){fig-align="center" width="200"}
+
+Source:
+<div style="text-indent: -40px; padding-left: 40px; font-size: 0.8em">
+<p><a href="https://contralacorrupcion.mx/ley-de-ingresos-2023-deuda-billonaria-historica-y-supuestos-poco-creibles/">
+
+Martínez Rodríguez, Javier. “Ley de Ingresos 2023: Deuda Billonaria Histórica y Supuestos Poco Creíbles.” Mexicanos Contra la Corrupción y la Impunidad, October 28, 2022. </a></p>
+
+</div>
 
 :::
 
