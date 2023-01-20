@@ -4,7 +4,7 @@ author: "<span style='color:#4f4f4f; font-size:30pt'> Javier Martínez Rodrígue
 format: 
   revealjs:
     slide-number: c/t
-    background-image: 06_imagenes/Identidad-gráfica/background-2.png
+    background-image: 06_imagenes/identidad-grafica/background-2.png
     parallax-background-size: 100% 100%
     background-size: 100% 100%
     background-position: 100% 100%
@@ -12,7 +12,7 @@ format:
     fontsize: 1.4em
     css: ["Mi-tema.css"]
 title-slide-attributes:
-    data-background-image: 06_imagenes/Identidad-gráfica/background.png
+    data-background-image: 06_imagenes/identidad-grafica/background.png
     data-background-size: 100% 100%  
 
 ---
@@ -30,15 +30,15 @@ title-slide-attributes:
 * It was found that a significant portion of the population perceives the military as one of the least corrupt institutions, leading to high support for militarization policies. However, this has not been due to the lesser perception of corruption in projects led by the army.
 * To obtain these results, a face-to-face survey of 1,500 people was designed, conducted, and analyzed.
 
-![](06_imagenes/Identidad-gráfica/mmc/militarizacion-guardia.png){fig-align="center" width="300"}
+![](06_imagenes/identidad-grafica/mmc/militarizacion-guardia.png){fig-align="center" width="300"}
 
 :::
 
 ::: {.column width="30%"}
 
-![](06_imagenes/Identidad-gráfica/mmc/perce-corrupcion.png){fig-align="center" width="250"}
+![](06_imagenes/identidad-grafica/mmc/perce-corrupcion.png){fig-align="center" width="250"}
 
-![](06_imagenes/Identidad-gráfica/mmc/perce-corrupcion-obras.png){fig-align="center" width="250"}
+![](06_imagenes/identidad-grafica/mmc/perce-corrupcion-obras.png){fig-align="center" width="250"}
 
 
 :::
