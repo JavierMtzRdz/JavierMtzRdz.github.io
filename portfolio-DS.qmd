@@ -3,6 +3,7 @@ title: "<span style='color:#f6f6f6; font-size:100pt'> Javier's Portfolio</span>"
 author: "<span style='color:#bdc3c2; font-size:30pt'> Javier Martínez Rodríguez</span>"
 format: 
   revealjs:
+    width: 1200
     slide-number: c/t
     background-image: 06_imagenes/identidad-grafica/background-2.png
     parallax-background-size: 100% 100%
@@ -11,11 +12,228 @@ format:
     background-repeat: no-repeat
     fontsize: 1.3em
     css: ["Mi-tema.css"]
+    transition: slide
+    background-transition: fade
 title-slide-attributes:
     data-background-image: 06_imagenes/identidad-grafica/background.png
     data-background-size: 100% 100%  
 
 ---
+##  {fullscreen="true"}
+
+::: {style='color:#4f4f4f;font-size:1.7em'}
+Hi! I am **Javier Martínez Rodríguez** and here are some of my most relevant projects. 🙋🏽‍♂️
+
+During the last five years, I have had the opportunity to participate in multiple projects that required <b>data analysis</b> and  <b>quantitative methods</b>, mainly applied to <b>public issues</b>. In this portfolio, I gather and explain some I have been most interested.
+
+This presentation is divided into three parts.
+
+1. **Projects.** In this section, I show some projects I have worked on that did not end in a publication.
+
+2. **Publications.** This section concentrates on some of my most relevant publications that required statistics and programming.
+
+3. **Collaborations.** Here, I list some projects in which I have participated carrying out all or most of the analysis and presentation of the data.
+:::
+
+
+
+## {fullscreen="true" background-image="06_imagenes/identidad-grafica/background-3.png" background-size="100% 100%"}
+
+<br><br><br><br><br>
+
+::: {style='color:#EFF5F5;font-size:10em;text-align:left;vertical-align:middle' layout="[[1], [-1]]"}
+Projects
+:::
+
+
+
+## {fullscreen="true"}
+<h2>Budget tracking dashboard</h2>
+
+
+::: {style='font-size:1.5em'}
+
+For this project, I created a dashboard to view statistics on Mexico's public spending from open budget data for the last ten years.
+
+
+The data was processed with **{data.table}** and the dashboard built with **{shiny}**. It can be consulted <a href="https://javier-mtz-rd.shinyapps.io/dashboard_presupuesto/">here</a>.
+
+:::
+<br>
+
+::: {.column width="49%"}
+
+![](06_imagenes/dashboard-ppto/ppto-1.png){fig-align="center" width="600"}
+
+
+:::
+
+
+::: {.column width="49%"}
+
+![](06_imagenes/dashboard-ppto/ppto-2.png){fig-align="center" width="600"}
+
+
+:::
+
+
+
+## {fullscreen="true"}
+<h2>Tracking North America Indicators</h2>
+
+
+::: {style='font-size:1.5em'}
+
+Over the past six months, I have processed, visualized, and interpreted economic data from the North American region to prepare weekly reports for stakeholders to aid decision-making processes.
+
+
+I have conducted the analysis and visualization process with **{tidyverse}**.
+
+:::
+
+
+::: {.column width="49%"}
+
+![](06_imagenes/economic-indicators/cpi-mex-eeuu-subind.png){fig-align="center" width="600"}
+
+
+:::
+
+
+::: {.column width="49%"}
+
+![](06_imagenes/economic-indicators/PIB-int-comp-min.png){fig-align="center" width="600"}
+
+
+:::
+
+
+
+## {fullscreen="true"}
+<h2>Tracking North America Indicators</h2>
+
+
+::: {.column width="49%"}
+
+![](06_imagenes/economic-indicators/ex-inf-gen-sub-2022-2023.png){fig-align="center" width="380"}
+
+
+![](06_imagenes/economic-indicators/igae-ioae-concent.png){fig-align="center" width="380"}
+
+
+:::
+
+
+::: {.column width="49%"}
+
+![](06_imagenes/economic-indicators/nofarm-bls-comps.png){fig-align="center" width="380"}
+
+
+![](06_imagenes/economic-indicators/tasa-int-real-eeuu.png){fig-align="center" width="380"}
+
+
+:::
+
+
+
+
+## {fullscreen="true"}
+<h2>Analysis based on regional indicators</h2>
+
+
+::: {style='font-size:1.2em'}
+
+Several of the projects I have worked on have involved regional data management. This has required the management of databases at different geographical and administrative levels, mapping this information and its interpretation. 
+
+To do this job, I have required programming with **{tidyverse}**, **{sf}**, **{osmdata}**, among others. 
+
+Here, for example, I used different indicators to calculate the lack of public resources allocated to investment in housing. From this, I estimated a GAM with a Gaussian Markov random field smoother to detect regional patterns.
+
+
+:::
+
+
+::: {.column width="49%"}
+
+![](06_imagenes/regional-data/mapa-idx2.png){fig-align="center" width="600"}
+
+:::
+
+
+::: {.column width="49%"}
+
+![](06_imagenes/regional-data/mapa-idx3.png){fig-align="center" width="600"}
+
+:::
+
+
+
+## {fullscreen="true"}
+<h2>Analysis based on regional indicators</h2>
+
+<br>
+
+::: {style='font-size:1.5em'}
+
+Here, on the other hand, I showed local opportunities in Santa Catarina, Nuevo Leon, to locate industries in the context of nearshoring.
+
+
+:::
+
+<br>
+
+::: {.column width="49%"}
+
+![](06_imagenes/regional-data/sta-catarina-1.png){fig-align="center" width="600"}
+
+:::
+
+
+::: {.column width="49%"}
+
+![](06_imagenes/regional-data/comunicación-nac-en.png){fig-align="left" width=800"}
+
+:::
+
+
+## {fullscreen="true"}
+<h2>Analysis based on regional indicators</h2>
+
+<br>
+
+::: {style='font-size:1.5em'}
+
+Here, on the other hand, I showed local opportunities in Santa Catarina, Nuevo Leon, to locate industries in the context of nearshoring.
+
+
+:::
+<br>
+
+::: {.column width=49%"}
+
+![](06_imagenes/regional-data/sta-catarina-3.png){fig-align="center" width="700"}
+
+:::
+
+::: {.column width="49%"}
+
+![](06_imagenes/regional-data/sta-catarina-4.png){fig-align="center" width="700"}
+
+::: 
+
+
+
+
+
+## {fullscreen="true" background-image="06_imagenes/identidad-grafica/background-3.png" background-size="100% 100%"}
+
+<br><br><br><br><br>
+
+::: {style='color:#EFF5F5;font-size:10em;text-align:left;vertical-align:middle' layout="[[1], [-1]]"}
+Publications
+:::
+
+
 
 ##  {fullscreen="true"}
 :::: {.columns}
@@ -34,12 +252,12 @@ title-slide-attributes:
 
 ::: {.column width="50%"}
 
-![](06_imagenes/mmc/militarizacion-guardia.png){fig-align="center" width="250"}
+![](06_imagenes/mmc/militarizacion-guardia.png){fig-align="center" width="300"}
 :::
 
 ::: {.column width="45%"}
 
-![](06_imagenes/mmc/perce-corrupcion-obras.png){fig-align="center" width="250"}
+![](06_imagenes/mmc/perce-corrupcion-obras.png){fig-align="center" width="300"}
 
 :::
 
@@ -50,7 +268,7 @@ title-slide-attributes:
 ![](06_imagenes/mmc/perce-corrupcion.png){fig-align="center" width="500"}
 
 
-Source:
+Publication:
 <div style="text-indent: -40px; padding-left: 40px; font-size: 0.8em">
 <p><a href="https://contralacorrupcion.mx/encuesta-mcci-reforma-2022/files/Encuesta-MCCI-Reforma-2022-web.pdf">
 Martínez Rodríguez, Javier. “Militarización, Militarismo y Corrupción.” In Vivir la     Corrupción, Sufrir la Corrupción: 16 Ensayos Sobre la Vida Pública en México. Mexico City: MCCI, 2022.</a></p>
@@ -76,12 +294,12 @@ Martínez Rodríguez, Javier. “Militarización, Militarismo y Corrupción.” 
 
 ::: {.column width="50%"}
 
-![](06_imagenes/revenues/ingresos-detalle-2023-mcci-2-2048x2048.png){fig-align="center" width="230"}
+![](06_imagenes/revenues/ingresos-detalle-2023-mcci-2-2048x2048.png){fig-align="center" width="300"}
 :::
 
 ::: {.column width="45%"}
 
-![](06_imagenes/revenues/indicadores-macro-2048x2048.png){fig-align="center" width="230"}
+![](06_imagenes/revenues/indicadores-macro-2048x2048.png){fig-align="center" width="300"}
 
 :::
 
@@ -93,7 +311,7 @@ Martínez Rodríguez, Javier. “Militarización, Militarismo y Corrupción.” 
 
 ![](06_imagenes/revenues/sensibilidad-cambios-2048x2048.png){fig-align="center" width="200"}
 
-Source:
+Publication:
 <div style="text-indent: -40px; padding-left: 40px; font-size: 0.8em">
 <p><a href="https://contralacorrupcion.mx/ley-de-ingresos-2023-deuda-billonaria-historica-y-supuestos-poco-creibles/">
 Martínez Rodríguez, Javier. “Ley de Ingresos 2023: Deuda Billonaria Histórica y Supuestos Poco Creíbles.” Mexicanos Contra la Corrupción y la Impunidad, October 28, 2022. </a></p>
@@ -126,10 +344,10 @@ Martínez Rodríguez, Javier. “Ley de Ingresos 2023: Deuda Billonaria Históri
 
 ::: {.column width="30%"}
 
-![](06_imagenes/ips/comp-ips.png){fig-align="center" width="500"}
+![](06_imagenes/ips/comp-ips.png){fig-align="center" width="300"}
 
 
-Source:
+Publication:
 <div style="text-indent: -40px; padding-left: 40px; font-size: 0.8em">
 <p><a href="https://federalismo.nexos.com.mx/2022/05/progreso-y-retroceso-social-en-el-sureste-mexicano/">
 Martínez Rodríguez, Javier. “Progreso y Retroceso Social en el Sureste Mexicano.” Nexos (Pacto Federal), May 18, 2022. 
@@ -175,7 +393,7 @@ Martínez Rodríguez, Javier. “Progreso y Retroceso Social en el Sureste Mexic
 ![](06_imagenes/desap-inst/Ppto-organismo.png){fig-align="center" width="500"}
 
 
-Source:
+Publication:
 <div style="text-indent: -40px; padding-left: 40px; font-size: 0.8em">
 <p><a href="https://anticorrupcion.nexos.com.mx/centralizacion-administrativa-y-carniceria-institucional/">
 Martínez Rodríguez, Javier. “Centralización Administrativa y Carnicería Institucional.” Nexos (Desarmar la corrupción), February 3, 2022.
@@ -226,7 +444,7 @@ Martínez Rodríguez, Javier. “Centralización Administrativa y Carnicería In
 <br>
 
 
-Source:
+Publication:
 <div style="text-indent: -40px; padding-left: 40px; font-size: 0.8em">
 <p><a href="https://contralacorrupcion.mx/los-candidatos-al-congreso-que-no-reportan-sus-gastos-de-campana/">
 Núñez, Leonardo, Javier Martínez Rodríguez, and Jorge A. Castañeda Morales. “Los Candidatos al Congreso que no Reportan sus Gastos de Campaña.” Mexicanos Contra la Corrupción y la Impunidad, May 20, 2021. </a></p>
@@ -268,13 +486,11 @@ Núñez, Leonardo, Javier Martínez Rodríguez, and Jorge A. Castañeda Morales.
 
 ::: {.column width="30%"}
 
-![](06_imagenes/compras/compras-3.png){fig-align="center" width="500"}
+![](06_imagenes/compras/compras-3.png){fig-align="center" width="300"}
 
-![](06_imagenes/compras/compras-4.png){fig-align="center" width="500"}
+![](06_imagenes/compras/compras-4.png){fig-align="center" width="300"}
 
-
-
-Source:
+Publication:
 <div style="text-indent: -40px; padding-left: 40px; font-size: 0.8em">
 <p><a href="https://contralacorrupcion.mx/promesas-incumplidas-de-la-4t-80-6-de-los-contratos-de-2021-han-sido-entregados-por-adjudicacion-directa/">
 Núñez, Leonardo and Javier Martínez Rodríguez. “Promesas incumplidas de la 4T: 80.6% de los contratos de 2021 han sido entregados por adjudicación directa.” Mexicanos Contra la Corrupción y la Impunidad, July 5, 2021. </a></p>
@@ -321,7 +537,7 @@ Núñez, Leonardo and Javier Martínez Rodríguez. “Promesas incumplidas de la
 
 <br><br><br><br><br>
 
-Source:
+Publication:
 <div style="text-indent: -40px; padding-left: 40px; font-size: 0.8em">
 <p><a href="https://oraculus.mx/2019/01/14/militarizacion-de-la-seguridad-publica-la-confianza-es-la-madre-del-descuido/">
 Blanc Murguía, David, Javier Martínez Rodríguez, and Julio Ríos Figueroa. “Militarización de la Seguridad Pública: La Confianza es la Madre del Descuido.” Oraculus-Primer Saque, January 14, 2019.
@@ -333,4 +549,50 @@ Blanc Murguía, David, Javier Martínez Rodríguez, and Julio Ríos Figueroa. �
 
 ::::
 
+## {fullscreen="true" background-image="06_imagenes/identidad-grafica/background-3.png" background-size="100% 100%"}
 
+<br><br><br><br><br>
+
+::: {style='color:#EFF5F5;font-size:10em;text-align:left;vertical-align:middle' layout="[[1], [-1]]"}
+Collaborations
+:::
+
+
+##  {fullscreen="true"}
+
+::: {.column width="39%"}
+
+<h2>Panorama del poder 2021</h2>
+
+<h3><span style='color:#4f4f4f'>[Power Outlook 2021]</span></h3>
+ 
+
+* This research shows the political changes in Mexico based on the results of the elections.
+
+* **I participated in this project processing the detail by polling place of the election results and generating the visualizations.**
+
+* For this project I processed the data with **{data.table}** and generated the charts and maps with **{leaflet}** and **{highcharter}**.
+
+* The visualizations on the right show, for example, the change of winning party by constituency between 2018 and 2021.
+
+Publication:
+<div style="text-indent: -40px; padding-left: 40px; font-size: 0.8em">
+<p><a href="https://www.nexos.com.mx/?p=56854">
+Amparo Casar, María and Leonardo Núñez González. “Panorama del poder 2021.” Nexos, June 7, 2021.
+</a></p>
+
+</div>
+
+:::
+
+::: {.column width="59%"}
+
+<p align="center">
+<iframe width="650" height="250" src="https://redaccion.nexos.com.mx/wp-content/uploads/mapas/mapas-interactivos/mapa_distritos_18_21.html" title="Map1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
+
+<p align="center">
+<iframe width="650" height="400"  src="https://redaccion.nexos.com.mx/wp-content/uploads/mapas/graficas-interactivas/sankey_distritos_18_21.html" title="Plot 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
+
+:::
