@@ -191,7 +191,7 @@ Here, on the other hand, I showed local opportunities in Santa Catarina, Nuevo L
 
 ::: {.column width="49%"}
 
-![](06_imagenes/regional-data/comunicación-nac-en.png){fig-align="left" width=800"}
+![](06_imagenes/regional-data/comunicacion-nac-en.png){fig-align="left" width=800"}
 
 :::
 
@@ -569,14 +569,14 @@ Collaborations
 
 * This research shows the political changes in Mexico based on the results of the elections.
 
-* **I participated in this project processing the detail by polling place of the election results and generating the visualizations.**
+* **I participated in this project processing the election results at the polling station level and generating the visualizations.**
 
 * For this project I processed the data with **{data.table}** and generated the charts and maps with **{leaflet}** and **{highcharter}**.
 
 * The visualizations on the right show, for example, the change of winning party by constituency between 2018 and 2021.
 
 Publication:
-<div style="text-indent: -40px; padding-left: 40px; font-size: 0.8em">
+<div style="text-indent: -40px; padding-left: 40px">
 <p><a href="https://www.nexos.com.mx/?p=56854">
 Amparo Casar, María and Leonardo Núñez González. “Panorama del poder 2021.” Nexos, June 7, 2021.
 </a></p>
