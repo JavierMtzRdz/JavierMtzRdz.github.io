@@ -570,8 +570,9 @@ ggplot() +
 :::
 
 ::: {.column width="30%"}
-
+::: {style='font-size:0.8em'}
 I use this functions to generate plots in {ggplot2} with MCCI's design.
+
 :::
 
 ```{r}
