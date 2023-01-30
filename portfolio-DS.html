@@ -28,6 +28,70 @@
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
     }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="portfolio-DS_files/libs/revealjs/dist/theme/quarto.css" id="theme">
   <link rel="stylesheet" href="Mi-tema.css">
@@ -339,13 +403,13 @@
 <section id="section" class="slide level2" data-fullscreen="true">
 <h2></h2>
 <div style="color:#4f4f4f;font-size:1.7em">
-<p>Hi! I am <strong>Javier Martínez Rodríguez</strong> and here are some of my most relevant projects. 🙋🏽‍♂️</p>
-<p>During the last five years, I have had the opportunity to participate in multiple projects that required <b>data analysis</b> and <b>quantitative methods</b>, mainly applied to <b>public issues</b>. In this portfolio, I gather and explain some I have been most interested.</p>
+<p>Hi! I am <strong>Javier Martínez Rodríguez</strong> . Here are some of my most relevant projects. 🙋🏽‍♂️</p>
+<p>During the last five years, I had the opportunity to participate in multiple projects that required <b>data analysis</b> and <b>quantitative methods</b>, mainly applied to <b>public issues</b>. In this portfolio, I gathered and explained some of my most interesting projects.</p>
 <p>This presentation is divided into three parts.</p>
 <ol type="1">
-<li><p><strong>Projects.</strong> In this section, I show some projects I have worked on that did not end in a publication.</p></li>
-<li><p><strong>Publications.</strong> This section concentrates on some of my most relevant publications that required statistics and programming.</p></li>
-<li><p><strong>Collaborations.</strong> Here, I list some projects in which I have participated carrying out all or most of the analysis and presentation of the data.</p></li>
+<li><p><strong>Projects.</strong> In this section, I displayed some projects I worked on that were not part of a publication.</p></li>
+<li><p><strong>Publications.</strong> This section focuses on some of my most relevant publications that required statistics and programming.</p></li>
+<li><p><strong>Collaborations.</strong> Here, I list some projects in which I participated by carrying out all or most of the analysis and presentation of the data.</p></li>
 </ol>
 </div>
 </section>
@@ -366,7 +430,7 @@
 Budget tracking dashboard
 </h2>
 <div style="font-size:1.5em">
-<p>For this project, I created a dashboard to view statistics on Mexico’s public spending from open budget data for the last ten years.</p>
+<p>For this project, I created a dashboard to visualize Mexico’s public spending from open budget data for the last ten years.</p>
 <p>The data was processed with <strong>{data.table}</strong> and the dashboard built with <strong>{shiny}</strong>. It can be consulted <a href="https://javier-mtz-rd.shinyapps.io/dashboard_presupuesto/">here</a>.</p>
 </div>
 <p><br></p>
@@ -445,9 +509,9 @@ Tracking North America Indicators
 Analysis based on regional indicators
 </h2>
 <div style="font-size:1.2em">
-<p>Several of the projects I have worked on have involved regional data management. This has required the management of databases at different geographical and administrative levels, mapping this information and its interpretation.</p>
-<p>To do this job, I have required programming with <strong>{tidyverse}</strong>, <strong>{sf}</strong>, <strong>{osmdata}</strong>, among others.</p>
-<p>Here, for example, I used different indicators to calculate the lack of public resources allocated to investment in housing. From this, I estimated a GAM with a Gaussian Markov random field smoother to detect regional patterns.</p>
+<p>Some of the projects I have worked on have required the managing, mapping and interpreting of databases at different geographical and administrative levels.</p>
+<p>To perform this analysis, I used <strong>{tidyverse}</strong>, <strong>{sf}</strong>, <strong>{osmdata}</strong>, among others R packages.</p>
+<p>Here, for example, I used different indicators to calculate the lack of public resources allocated to housing. From this, I estimated a GAM with a Gaussian Markov random field smoother to detect regional patterns.</p>
 </div>
 <div class="column" style="width:49%;">
 <div class="quarto-figure quarto-figure-center">
@@ -471,7 +535,7 @@ Analysis based on regional indicators
 </h2>
 <p><br></p>
 <div style="font-size:1.5em">
-<p>Here, on the other hand, I showed local opportunities in Santa Catarina, Nuevo Leon, to locate industries in the context of nearshoring.</p>
+<p>Here, on the other hand, I was required to identify the nearshoring potential of different regions in order to locate certain industries. In the following plots you can see some of the indicators I provided in the case of Santa Catarina, Nuevo Leon.</p>
 </div>
 <p><br></p>
 <div class="column" style="width:49%;">
@@ -496,7 +560,7 @@ Analysis based on regional indicators
 </h2>
 <p><br></p>
 <div style="font-size:1.5em">
-<p>Here, on the other hand, I showed local opportunities in Santa Catarina, Nuevo Leon, to locate industries in the context of nearshoring.</p>
+<p>Here, on the other hand, I was required to identify the nearshoring potential of different regions in order to locate certain industries. In the following plots you can see some of the indicators I provided in the case of Santa Catarina, Nuevo Leon.</p>
 </div>
 <p><br></p>
 <div class="column" style="width:49%&quot;;">
@@ -514,7 +578,224 @@ Analysis based on regional indicators
 </div>
 </div>
 </section>
-<section id="section-8" class="slide level2" data-fullscreen="true" data-background-image="06_imagenes/identidad-grafica/background-3.png" data-background-size="100% 100%">
+<section id="section-8" class="slide level2" data-fullscreen="true">
+<h2></h2>
+<h2>
+Management of data on electricity supply
+</h2>
+<div style="font-size:1.2em">
+<p>In these projects, I participated estimating indicators on the electricity supply to evaluate the situation of energy availability in certain areas of Mexico. I also participated in projecting the consumption and electricity costs of some companies with different types of supply.</p>
+<p>In the following graphs, for example, I modeled the electrical component congestion in the short and long term for the different electrical zones of Mexico. To do this, I built Bayesian structural time series models with JAGS (<strong>{rjags}</strong>) and plotted them with <strong>{ggplot}</strong> and <strong>{sf}</strong>.</p>
+</div>
+
+<img data-src="06_imagenes/energy/energy1.png" width="700" class="r-stretch quarto-figure-center"></section>
+<section id="section-9" class="slide level2" data-fullscreen="true">
+<h2></h2>
+<h2>
+Management of data on electricity supply
+</h2>
+<p><br></p>
+<div style="font-size:1.5em">
+<p>In this case, I built estimates based on the different scenarios of electrical supplies.</p>
+</div>
+<div class="column" style="width:49%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="06_imagenes/energy/sankey-source.png" width="500"></p>
+</figure>
+</div>
+</div>
+<div class="column" style="width:49%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="06_imagenes/energy/sankey-usage.png" width="500"></p>
+</figure>
+</div>
+</div>
+<p>Note: these graphs represent the type of estimates made, but the data for this case are simulated.</p>
+</section>
+<section id="section-10" class="slide level2" data-fullscreen="true">
+<h2></h2>
+<h2>
+Package making in R
+</h2>
+<div style="font-size:1.3em">
+<p>To streamline and share some of the features I’ve built, I created some R packages (not published on CRAN yet).</p>
+<p>The main package has been <a href="https://github.com/JavierMtzRdz/presupuestoR"><b>{presupuestoR}</b></a>. It simplifies the process of working with Mexico’s budget data. This way, essential budget statistics can be estimated with just a few lines.</p>
+</div>
+<div class="column" style="width:30%;">
+<p>This simple code estimates the approved budget for each ministry in 2022 and assign its abbreviation.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>budget_ministery <span class="ot">&lt;-</span> budget_2022 <span class="sc">%&gt;%</span> </span>
+<span id="cb1-2"><a href="#cb1-2"></a>  presupuestoR<span class="sc">::</span><span class="fu">sum_pef_tp</span>(id_ramo,</span>
+<span id="cb1-3"><a href="#cb1-3"></a>                           <span class="at">keep_mensual =</span> F) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-4"><a href="#cb1-4"></a>  <span class="fu">mutate</span>(<span class="at">abr_ramo =</span> presupuestoR<span class="sc">::</span><span class="fu">id_ramo_to_abr_ramo</span>(id_ramo),</span>
+<span id="cb1-5"><a href="#cb1-5"></a>         <span class="at">aprobado =</span> aprobado<span class="sc">/</span><span class="dv">1000000</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-6"><a href="#cb1-6"></a>  <span class="fu">select</span>(abr_ramo, aprobado)</span>
+<span id="cb1-7"><a href="#cb1-7"></a></span>
+<span id="cb1-8"><a href="#cb1-8"></a>budget_ministery</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 48 × 2
+   abr_ramo        aprobado
+   &lt;chr&gt;              &lt;dbl&gt;
+ 1 P. Legislativo    15013.
+ 2 SE                 3587.
+ 3 SEP              364600.
+ 4 SSA              193948.
+ 5 Semar             37750.
+ 6 STPS              25384.
+ 7 Sedatu            12868.
+ 8 Semarnat          40796.
+ 9 Sener             47058.
+10 Aport. a la SS. 1092012.
+# … with 38 more rows</code></pre>
+</div>
+</div>
+</div>
+<div class="column" style="width:3%;">
+
+</div>
+<div class="column" style="width:30%;">
+<p>This code estimates the value of the approved budget in 2022 with 2010 prices in a few lines of code.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>budget_ministery <span class="sc">%&gt;%</span> </span>
+<span id="cb3-2"><a href="#cb3-2"></a>  <span class="fu">mutate</span>(<span class="at">aprobado_2010_prices =</span> </span>
+<span id="cb3-3"><a href="#cb3-3"></a>              presupuestoR<span class="sc">::</span><span class="fu">deflactar_tp</span>(aprobado, </span>
+<span id="cb3-4"><a href="#cb3-4"></a>                                         <span class="dv">2022</span>,</span>
+<span id="cb3-5"><a href="#cb3-5"></a>                                         <span class="dv">2010</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 48 × 3
+   abr_ramo        aprobado aprobado_2010_prices
+   &lt;chr&gt;              &lt;dbl&gt;                &lt;dbl&gt;
+ 1 P. Legislativo    15013.                8424.
+ 2 SE                 3587.                2013.
+ 3 SEP              364600.              204594.
+ 4 SSA              193948.              108834.
+ 5 Semar             37750.               21183.
+ 6 STPS              25384.               14244.
+ 7 Sedatu            12868.                7221.
+ 8 Semarnat          40796.               22892.
+ 9 Sener             47058.               26406.
+10 Aport. a la SS. 1092012.              612779.
+# … with 38 more rows</code></pre>
+</div>
+</div>
+</div>
+<div class="column" style="width:3%;">
+
+</div>
+<div class="column" style="width:30%;">
+<p>Here, the total net State spending for 2022 is estimated in three lines of code.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>budget_2022 <span class="sc">%&gt;%</span> </span>
+<span id="cb5-2"><a href="#cb5-2"></a>  presupuestoR<span class="sc">::</span><span class="fu">netear_tp</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb5-3"><a href="#cb5-3"></a>  presupuestoR<span class="sc">::</span><span class="fu">negative_neteo_tp</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb5-4"><a href="#cb5-4"></a>  presupuestoR<span class="sc">::</span><span class="fu">sum_pef_tp</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb5-5"><a href="#cb5-5"></a>  <span class="fu">transmute</span>(<span class="fu">comma</span>(aprobado))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+  `comma(aprobado)`
+  &lt;chr&gt;            
+1 7,088,250,300,000</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="section-11" class="slide level2" data-fullscreen="true">
+<h2></h2>
+<h2>
+Package making in R
+</h2>
+<div style="font-size:0.9em">
+<p>Other packages I developed are <a href="https://github.com/JavierMtzRdz/presupuestoR"><b>{mytidyfunctions}</b></a> and <b>{mccistyleR}</b> (this package is not public). The first one focuses on some functions to visualize data and the second one allows the creation of plots with the graphic identity of <a href="https://contralacorrupcion.mx/quienes-somos/">Mexicanos Contra la Corrupción y la Impunidad</a> (MCCI).</p>
+</div>
+<div class="column" style="width:30%;">
+<div style="font-size:0.8em">
+<p>In this code, I integrated three geoms from {mytidyfunctions} to complement the geom_col().</p>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb7-2"><a href="#cb7-2"></a></span>
+<span id="cb7-3"><a href="#cb7-3"></a>data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,</span>
+<span id="cb7-4"><a href="#cb7-4"></a>       <span class="at">y =</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">365</span>, <span class="dv">10</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb7-5"><a href="#cb7-5"></a>       <span class="at">z =</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">365</span>, <span class="dv">10</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)) </span>
+<span id="cb7-6"><a href="#cb7-6"></a></span>
+<span id="cb7-7"><a href="#cb7-7"></a>data <span class="sc">%&gt;%</span> </span>
+<span id="cb7-8"><a href="#cb7-8"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> x)) <span class="sc">+</span></span>
+<span id="cb7-9"><a href="#cb7-9"></a>  <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">y =</span> y, <span class="at">fill =</span> <span class="st">"A"</span>)) <span class="sc">+</span></span>
+<span id="cb7-10"><a href="#cb7-10"></a>  mytidyfunctions<span class="sc">::</span><span class="fu">geom_segment_point</span>(</span>
+<span id="cb7-11"><a href="#cb7-11"></a>    <span class="fu">aes</span>(<span class="at">y =</span> z, <span class="at">color =</span> <span class="st">"B"</span>),</span>
+<span id="cb7-12"><a href="#cb7-12"></a>    <span class="at">num =</span> <span class="dv">100</span>) <span class="sc">+</span></span>
+<span id="cb7-13"><a href="#cb7-13"></a>  mytidyfunctions<span class="sc">::</span><span class="fu">geom_dotted</span>(</span>
+<span id="cb7-14"><a href="#cb7-14"></a>    <span class="fu">aes</span>(<span class="at">y =</span> y)) </span>
+<span id="cb7-15"><a href="#cb7-15"></a>  mytidyfunctions<span class="sc">::</span><span class="fu">geom_text_bi</span>(</span>
+<span id="cb7-16"><a href="#cb7-16"></a>    <span class="fu">aes</span>(<span class="at">label =</span> y, <span class="at">y =</span> y)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="portfolio-DS_files/figure-revealjs/unnamed-chunk-6-1.png" width="960"></p>
+</div>
+</div>
+</div>
+<div class="column" style="width:3%;">
+
+</div>
+<div class="column" style="width:30%;">
+<div style="font-size:0.8em">
+<p>Additionally, I built some functions to work with maps in {ggplot2}, as seen below.</p>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> map_ent) <span class="sc">+</span></span>
+<span id="cb8-3"><a href="#cb8-3"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> red) <span class="sc">+</span></span>
+<span id="cb8-4"><a href="#cb8-4"></a>  mytidyfunctions<span class="sc">::</span><span class="fu">add_zoom</span>(a) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="portfolio-DS_files/figure-revealjs/unnamed-chunk-8-1.png" width="960"></p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> map_ent) <span class="sc">+</span></span>
+<span id="cb9-3"><a href="#cb9-3"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> red) <span class="sc">+</span></span>
+<span id="cb9-4"><a href="#cb9-4"></a>  mytidyfunctions<span class="sc">::</span><span class="fu">make_limit</span>(</span>
+<span id="cb9-5"><a href="#cb9-5"></a>    map_ent <span class="sc">%&gt;%</span> </span>
+<span id="cb9-6"><a href="#cb9-6"></a>      <span class="fu">filter</span>(nom_ent <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"México"</span>))) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="portfolio-DS_files/figure-revealjs/unnamed-chunk-10-1.png" width="960"></p>
+</div>
+</div>
+</div>
+<div class="column" style="width:3%;">
+
+</div>
+<div class="column" style="width:30%;">
+<p>I use this functions to generate plots in {ggplot2} with MCCI’s design.</p>
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>data <span class="sc">%&gt;%</span> </span>
+<span id="cb10-2"><a href="#cb10-2"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> x)) <span class="sc">+</span></span>
+<span id="cb10-3"><a href="#cb10-3"></a>  <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">y =</span> y,</span>
+<span id="cb10-4"><a href="#cb10-4"></a>               <span class="at">fill =</span> z)) <span class="sc">+</span></span>
+<span id="cb10-5"><a href="#cb10-5"></a>  mccistyleR<span class="sc">::</span><span class="fu">scale_fill_mcci</span>(<span class="at">discrete =</span> F) <span class="sc">+</span></span>
+<span id="cb10-6"><a href="#cb10-6"></a>  mccistyleR<span class="sc">::</span><span class="fu">theme_mcci</span>() <span class="sc">+</span></span>
+<span id="cb10-7"><a href="#cb10-7"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"title"</span>,</span>
+<span id="cb10-8"><a href="#cb10-8"></a>       <span class="at">subtitle =</span> <span class="st">"subtitle"</span>) <span class="sc">+</span></span>
+<span id="cb10-9"><a href="#cb10-9"></a>  mccistyleR<span class="sc">::</span><span class="fu">mcci_background</span>() <span class="sc">+</span></span>
+<span id="cb10-10"><a href="#cb10-10"></a>  mccistyleR<span class="sc">::</span><span class="fu">mcci_imagotipos</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img data-src="portfolio-DS_files/figure-revealjs/unnamed-chunk-12-1.png" width="384"></p>
+</div>
+</div>
+<p>:::</p>
+</section>
+<section id="section-12" class="slide level2" data-fullscreen="true" data-background-image="06_imagenes/identidad-grafica/background-3.png" data-background-size="100% 100%">
 <h2></h2>
 <p><br><br><br><br><br></p>
 <div class="quarto-layout-panel" style="color:#EFF5F5;font-size:10em;text-align:left;vertical-align:middle">
@@ -525,7 +806,7 @@ Analysis based on regional indicators
 </div>
 </div>
 </section>
-<section id="section-9" class="slide level2" data-fullscreen="true">
+<section id="section-13" class="slide level2" data-fullscreen="true">
 <h2></h2>
 <div class="columns">
 <div class="column" style="width:70%;">
@@ -537,8 +818,8 @@ Militarización, militarismo y corrupción
 </h3>
 <ul>
 <li>This chapter analyzes the opinion of Mexicans regarding the growing participation of the military in civilian tasks and the effects on the level of corruption.</li>
-<li>It was found that a significant portion of the population perceives the military as one of the least corrupt institutions, leading to high support for militarization policies. However, this has not led to a lesser perception of corruption in projects conducted by the army.</li>
-<li>It could have consequences for the democratic process and the balance of power between civilian and military institutions</li>
+<li>It was found that a significant segment of the population perceives the army as one of the least corrupt institutions, leading to high support for militarization policies. However, this has not decreased the perception of corruption in projects conducted by the army.</li>
+<li>The increased participation of the army in civilian tasks could have dire consequences for the democratic process and the balance of power between civilian and military institutions</li>
 <li><strong>To obtain these results, a face-to-face survey of 1,500 people was designed, conducted, and analyzed with {srvyr}.</strong></li>
 </ul>
 <div class="column" style="width:50%;">
@@ -570,7 +851,7 @@ Publication:
 </div>
 </div>
 </section>
-<section id="section-10" class="slide level2" data-fullscreen="true">
+<section id="section-14" class="slide level2" data-fullscreen="true">
 <h2></h2>
 <div class="columns">
 <div class="column" style="width:70%;">
@@ -582,7 +863,7 @@ Ley de Ingresos 2023: deuda billonaria histórica y supuestos poco creíbles
 </h3>
 <ul>
 <li>This article analyzes Mexico’s public revenue plan for 2023.</li>
-<li>It is expected to be the highest amount of expenditure of which there is record, along with a level of indebtedness that had not been observed in a decade (1.2 trillion pesos). However, macroeconomic projections indicate that next year’s revenues could be below the plan, which could seriously compromise the compliance of 2023 expenditure goals.</li>
+<li>It is expected to be the highest amount of expenditure of which there is record, along with a level of indebtedness that had not been observed in a decade (1.2 trillion pesos). However, macroeconomic projections indicate that this year’s revenue could be less than projected, which could seriously compromise the compliance of the 2023 expenditure goals.</li>
 <li><strong>These results were found after processing the open data of public finances and the maroeconomic expectations of the central bank of Mexico and other international institutions.</strong></li>
 </ul>
 <div class="column" style="width:50%;">
@@ -619,7 +900,7 @@ Publication:
 </div>
 </div>
 </section>
-<section id="section-11" class="slide level2" data-fullscreen="true">
+<section id="section-15" class="slide level2" data-fullscreen="true">
 <h2></h2>
 <div class="columns">
 <div class="column" style="width:70%;">
@@ -630,8 +911,8 @@ Progreso y retroceso social en el sureste mexicano
 <span style="color:#4f4f4f">[Social Progress and Regression in the Mexican Southeast]</span>
 </h3>
 <ul>
-<li>The text discusses the limitations of using economic indicators such as GDP per capita to evaluate the quality of life in the southeast region of Mexico, which is made up of the states of Oaxaca, Chiapas and Guerrero.</li>
-<li>It argues that to have a more complete understanding of the quality of life in each region, it is necessary to examine the economic situation of the region and complement it with measurements focused on evaluating human development such as the <a href="https://github.com/mexicocomovamos/ips">IPS (Social Progress Index)</a> of Mexico.</li>
+<li>The text discusses the limitations of using economic indicators such as GDP per capita to evaluate the quality of life in the southeast region of Mexico (Oaxaca, Chiapas and Guerrero).</li>
+<li>It argues that to have a more complete understanding of the quality of life in this region, it is necessary to examine its economic situation and complement it with measures focused on evaluating human development such as the <a href="https://github.com/mexicocomovamos/ips">IPS (Social Progress Index)</a> of Mexico.</li>
 <li><strong>This analysis was carried out using R to process the IPS data and generate the visualizations.</strong></li>
 </ul>
 <div class="quarto-figure quarto-figure-center">
@@ -654,7 +935,7 @@ Publication:
 </div>
 </div>
 </section>
-<section id="section-12" class="slide level2" data-fullscreen="true">
+<section id="section-16" class="slide level2" data-fullscreen="true">
 <h2></h2>
 <div class="columns">
 <div class="column" style="width:70%;">
@@ -665,10 +946,10 @@ Centralización administrativa y carnicería institucional
 <span style="color:#4f4f4f">[Administrative Centralization and Institutional Carnage]</span>
 </h3>
 <ul>
-<li>This article analyzes the consequences of the law amendment to disappear 17 Mexican government agencies under the argument of austerity.</li>
-<li>This reform must be understood as a centralization process because, after analyzing the open data of the budget, it is shown that the savings from disappearing these institutions would be minimal.</li>
+<li>This article analyzes the consequences of the amendment to disappear 17 Mexican government agencies under the argument of austerity.</li>
+<li>This reform must be understood as a centralization effort because, after analyzing the open data of the budget, it is shown that the savings from disappearing these institutions would be minimal.</li>
 <li><strong>To carry out this research, data from the open budget of Mexico were processed and visualized with {tidyverse} package.</strong></li>
-<li>This text was among <a href="https://anticorrupcion.nexos.com.mx/los-10-textos-mas-leidos-del-ano-4/">the ten most read in 2022</a> on the Nexos’ anti-corruption blog.</li>
+<li>This text was among <a href="https://anticorrupcion.nexos.com.mx/los-10-textos-mas-leidos-del-ano-4/">the top ten most read articles in 2022</a> on the Nexos’ anti-corruption blog.</li>
 </ul>
 <div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
@@ -699,7 +980,7 @@ Publication:
 </div>
 </div>
 </section>
-<section id="section-13" class="slide level2" data-fullscreen="true">
+<section id="section-17" class="slide level2" data-fullscreen="true">
 <h2></h2>
 <div class="columns">
 <div class="column" style="width:70%;">
@@ -711,7 +992,7 @@ Los candidatos al Congreso que no reportan sus gastos de campaña
 </h3>
 <ul>
 <li>This article analyzes the subregistration of campaign expenses of the candidates for the Mexican federal elections of July 2021.</li>
-<li>It was found that an important proportion of candidates report less campaign spending on internet advertising than what was recorded by the Facebook Ad Library alone in the same period.</li>
+<li>It was found that an important segment of candidates reported less campaign spending on internet advertising than what was recorded by the Facebook Ad Library alone in the same period.</li>
 <li><strong>To obtain these results, the official Facebook pages of each candidate were identified and the search for ads on Facebook was automated in Python. This information was contrasted with the Institute for National Elections’ digital platform for real-time monitoring of campaign spending. Subsequently, the visualizations were generated with {ggplot2}.</strong></li>
 </ul>
 <div class="column" style="width:50%;">
@@ -744,7 +1025,7 @@ Publication:
 </div>
 </div>
 </section>
-<section id="section-14" class="slide level2" data-fullscreen="true">
+<section id="section-18" class="slide level2" data-fullscreen="true">
 <h2></h2>
 <div class="columns">
 <div class="column" style="width:70%;">
@@ -752,12 +1033,12 @@ Publication:
 Promesas incumplidas de la 4T: 80.6% de los contratos de 2021 han sido entregados por adjudicación directa
 </h3>
 <h4>
-<span style="color:#4f4f4f">[Broken Promises: 80.6% of 2021 Public Contracting Have Been Delivered by Direct Award]</span>
+<span style="color:#4f4f4f">[Broken Promises: 80.6% of 2021 Public Contracting Has Been Delivered by Direct Award]</span>
 </h4>
 <ul>
 <li>This article addresses government procurements and their potential for corruption.</li>
 <li>It was found that the current government continues to use direct awards as the primary contracting method and that its promise to limit their use has not been fulfilled.</li>
-<li><strong>To obtain these results, the data of more than two million contracts that the Mexican State has assigned during the last 11 years (2010-2021) was analyzed using SQL to process the data and {ggplot2} to visualize it.</strong></li>
+<li><strong>To obtain these results, the data of more than two million contracts that the Mexican State awarded during the last 11 years (2010-2021) was analyzed using SQL to process the data and {ggplot2} to visualize it.</strong></li>
 <li>This investigation was taken up by different newspapers and was on the <a href="https://img.kiosko.net/2021/07/05/mx/mx_reforma.750.jpg">front page of Reforma</a>, one of the main national media outlets in Mexico.</li>
 </ul>
 <div class="column" style="width:50%;">
@@ -794,7 +1075,7 @@ Publication:
 </div>
 </div>
 </section>
-<section id="section-15" class="slide level2" data-fullscreen="true">
+<section id="section-19" class="slide level2" data-fullscreen="true">
 <h2></h2>
 <div class="columns">
 <div class="column" style="width:70%;">
@@ -806,7 +1087,7 @@ Militarización de la seguridad pública: La confianza es la madre del descuido
 </h3>
 <ul>
 <li>The text discusses the causes and consequences of the military’s involvement in public security activities.</li>
-<li>It is found that the more the trust gap between the military and the police grows, in a context of high levels of insecurity, the more the military is called upon to address public security issues. Consequently, the more the population trusts the military, the more likely they are to commit human rights violations.</li>
+<li>It is found that the more the trust gap between the military and the police grows, in a context of high crime levels, the more the military is called upon to address crime issues. Regardless, the more the population trusts the military, the more likely the military is to commit human rights violations.</li>
 <li><strong>The study models data from 15 Latin American countries between 1995 and 2015 using R and Stata.</strong></li>
 </ul>
 <div class="column" style="width:50%;">
@@ -839,10 +1120,10 @@ Publication:
 </div>
 </div>
 </section>
-<section id="section-16" class="slide level2" data-fullscreen="true" data-background-image="06_imagenes/identidad-grafica/background-3.png" data-background-size="100% 100%">
+<section id="section-20" class="slide level2" data-fullscreen="true" data-background-image="06_imagenes/identidad-grafica/background-3.png" data-background-size="100% 100%">
 <h2></h2>
 <p><br><br><br><br><br></p>
-<div class="quarto-layout-panel" style="color:#EFF5F5;font-size:10em;text-align:left;vertical-align:middle">
+<div class="quarto-layout-panel" style="color:#EFF5F5;font-size:8em;text-align:left;vertical-align:middle">
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
 <p>Collaborations</p>
@@ -850,7 +1131,42 @@ Publication:
 </div>
 </div>
 </section>
-<section id="section-17" class="slide level2" data-fullscreen="true">
+<section id="section-21" class="slide level2" data-fullscreen="true">
+<h2></h2>
+<div class="column" style="width:39%;">
+<h2>
+El apoyo para mujeres que no fue
+</h2>
+<h3>
+<span style="color:#4f4f4f">[The Support for Women That Was Left Aside]</span>
+</h3>
+<ul>
+<li><p>This research analyzed the decrease in public spending to support gender equality and violence against women in Mexico.</p></li>
+<li><p><strong>I participated in this project analyzing data on public spending and violence in Mexico.</strong></p></li>
+<li><p>For this project, I processed the data with <strong>{tidyverse}</strong>.</p></li>
+<li><p><a href="https://contralacorrupcion.mx/violencia-contra-la-mujer/#:~:text=An%C3%A1lisis%20de%20datos%3A%20Javier%20Mart%C3%ADnez%20Rodr%C3%ADguez"> Credits at the end of the post. </a></p></li>
+</ul>
+Publication:
+<div style="text-indent: -40px; padding-left: 40px">
+<p>
+<a href="https://contralacorrupcion.mx/violencia-contra-la-mujer/"> Corzo, Blanca et al.&nbsp;“El Apoyo Para Mujeres Que No Fue.” MCCI | CONNECTAS. </a>
+</p>
+</div>
+</div>
+<div class="column" style="width:59%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://contralacorrupcion.mx/violencia-contra-la-mujer/media/images/05-la-violencia-no-para.jpg" width="800"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="06_imagenes/genero/genero1.png" width="600"></p>
+</figure>
+</div>
+</div>
+</section>
+<section id="section-22" class="slide level2" data-fullscreen="true">
 <h2></h2>
 <div class="column" style="width:39%;">
 <h2>
@@ -860,10 +1176,11 @@ Panorama del poder 2021
 <span style="color:#4f4f4f">[Power Outlook 2021]</span>
 </h3>
 <ul>
-<li><p>This research shows the political changes in Mexico based on the results of the elections.</p></li>
-<li><p><strong>I participated in this project processing the election results at the polling station level and generating the visualizations.</strong></p></li>
-<li><p>For this project I processed the data with <strong>{data.table}</strong> and generated the charts and maps with <strong>{leaflet}</strong> and <strong>{highcharter}</strong>.</p></li>
+<li><p>This research shows the political changes in Mexico based on the results of the 2021 elections.</p></li>
+<li><p><strong>I participated in this project processing the election results at polling station level and generating the visualizations.</strong></p></li>
+<li><p>For this project, I processed the data with <strong>{data.table}</strong> and generated the charts and maps with <strong>{leaflet}</strong> and <strong>{highcharter}</strong>.</p></li>
 <li><p>The visualizations on the right show, for example, the change of winning party by constituency between 2018 and 2021.</p></li>
+<li><p><a href="https://www.nexos.com.mx/?p=56854#:~:text=Javier%20Mart%C3%ADnez%20Rodr%C3%ADguez"> Credits at the end of the post. </a></p></li>
 </ul>
 Publication:
 <div style="text-indent: -40px; padding-left: 40px">
@@ -879,6 +1196,41 @@ Publication:
 </p>
 <p align="center">
 <iframe width="650" height="400" src="https://redaccion.nexos.com.mx/wp-content/uploads/mapas/graficas-interactivas/sankey_distritos_18_21.html" title="Plot 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
+</p>
+</div>
+</section>
+<section id="section-23" class="slide level2" data-fullscreen="true">
+<h2></h2>
+<div class="column" style="width:39%;">
+<h2>
+Sembrando Vida contra la Selva Maya
+</h2>
+<h3>
+<span style="color:#4f4f4f">[Sowing Life against the Mayan Rainforest]</span>
+</h3>
+<ul>
+<li><p>This research quantified the effect of the governmental program Sembrando Vida (which could be translated as Sowing Life) on the deforestation of the Yucatan rainforest.</p></li>
+<li><p><a href="https://www.eluniversal.com.mx/tendencias/otorgan-premio-de-periodismo-al-trabajo-sembrando-vida-contra-la-selva-maya-de-el-universal"> This work received the “Contar(nos)” journalism award. </a></p></li>
+<li><p><strong>I participated in this project carrying out spatial analysis to geolocate the coordinates of the program and detect the rainforest areas before the program started.</strong></p></li>
+<li><p>For this project, I used <strong>{tidyverse}</strong>, <strong>{sf}</strong>, <strong>{raster}</strong>, <strong>{rgdal}</strong> and <strong>{rgeos}</strong>.</p></li>
+<li><p><a href="https://www.eluniversal.com.mx/interactivos/2021/sembrando-vida-contra-la-selva-maya/#:~:text=JAVIER%20MART%C3%8DNEZ%20COLABOR%C3%93%20CON%20EL%20AN%C3%81LISIS%20GEOGR%C3%81FICO"> Credits at the end of the post. </a></p></li>
+</ul>
+Publication:
+<div style="text-indent: -40px; padding-left: 40px">
+<p>
+<a href="https://www.eluniversal.com.mx/interactivos/2021/sembrando-vida-contra-la-selva-maya/"> Carabaña, Carlos. “Sembrando Vida contra la Selva Maya.” El Universal, November 29, 2021. </a>
+</p>
+</div>
+</div>
+<div class="column" style="width:59%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="06_imagenes/sv/sv1.png" width="400"></p>
+</figure>
+</div>
+<p align="center">
+<iframe width="400" src="https://www.eluniversal.com.mx/interactivos/2021/sembrando-vida-contra-la-selva-maya/assets/img/grafico_02.svg" title="Plot 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
 </iframe>
 </p>
 </div>
@@ -1103,6 +1455,44 @@ Publication:
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
