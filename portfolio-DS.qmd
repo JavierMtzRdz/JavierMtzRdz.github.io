@@ -390,7 +390,7 @@ data %>%
     aes(y = z, color = "B"),
     num = 100) +
   mytidyfunctions::geom_dotted(
-    aes(y = y)) 
+    aes(y = y)) +
   mytidyfunctions::geom_text_bi(
     aes(label = y, y = y)) 
   
@@ -947,7 +947,7 @@ Collaborations
 
 * This research analyzed the decrease in public spending to support gender equality and violence against women in Mexico.
 
-* **I participated in this project analyzing data on public spending and violence in Mexico.**
+* **I participated in this project analyzing data on public spending and violence.**
 
 * For this project, I processed the data with **{tidyverse}**.
 
