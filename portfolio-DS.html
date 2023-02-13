@@ -667,16 +667,16 @@ Package making in R
 <pre><code># A tibble: 48 × 3
    abr_ramo        aprobado aprobado_2010_prices
    &lt;chr&gt;              &lt;dbl&gt;                &lt;dbl&gt;
- 1 P. Legislativo    15013.                8424.
- 2 SE                 3587.                2013.
- 3 SEP              364600.              204594.
- 4 SSA              193948.              108834.
- 5 Semar             37750.               21183.
- 6 STPS              25384.               14244.
- 7 Sedatu            12868.                7221.
- 8 Semarnat          40796.               22892.
- 9 Sener             47058.               26406.
-10 Aport. a la SS. 1092012.              612779.
+ 1 P. Legislativo    15013.                8432.
+ 2 SE                 3587.                2015.
+ 3 SEP              364600.              204784.
+ 4 SSA              193948.              108934.
+ 5 Semar             37750.               21203.
+ 6 STPS              25384.               14258.
+ 7 Sedatu            12868.                7228.
+ 8 Semarnat          40796.               22914.
+ 9 Sener             47058.               26431.
+10 Aport. a la SS. 1092012.              613347.
 # … with 38 more rows</code></pre>
 </div>
 </div>
@@ -721,15 +721,15 @@ Package making in R
 <span id="cb7-5"><a href="#cb7-5"></a>       <span class="at">z =</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">365</span>, <span class="dv">10</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)) </span>
 <span id="cb7-6"><a href="#cb7-6"></a></span>
 <span id="cb7-7"><a href="#cb7-7"></a>data <span class="sc">%&gt;%</span> </span>
-<span id="cb7-8"><a href="#cb7-8"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> x)) <span class="sc">+</span></span>
-<span id="cb7-9"><a href="#cb7-9"></a>  <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">y =</span> y, <span class="at">fill =</span> <span class="st">"A"</span>)) <span class="sc">+</span></span>
-<span id="cb7-10"><a href="#cb7-10"></a>  mytidyfunctions<span class="sc">::</span><span class="fu">geom_segment_point</span>(</span>
-<span id="cb7-11"><a href="#cb7-11"></a>    <span class="fu">aes</span>(<span class="at">y =</span> z, <span class="at">color =</span> <span class="st">"B"</span>),</span>
-<span id="cb7-12"><a href="#cb7-12"></a>    <span class="at">num =</span> <span class="dv">100</span>) <span class="sc">+</span></span>
-<span id="cb7-13"><a href="#cb7-13"></a>  mytidyfunctions<span class="sc">::</span><span class="fu">geom_dotted</span>(</span>
-<span id="cb7-14"><a href="#cb7-14"></a>    <span class="fu">aes</span>(<span class="at">y =</span> y)) <span class="sc">+</span></span>
-<span id="cb7-15"><a href="#cb7-15"></a>  mytidyfunctions<span class="sc">::</span><span class="fu">geom_text_bi</span>(</span>
-<span id="cb7-16"><a href="#cb7-16"></a>    <span class="fu">aes</span>(<span class="at">label =</span> y, <span class="at">y =</span> y)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-8"><a href="#cb7-8"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> x, </span>
+<span id="cb7-9"><a href="#cb7-9"></a>             <span class="at">y =</span> y, </span>
+<span id="cb7-10"><a href="#cb7-10"></a>             <span class="at">label =</span> y)) <span class="sc">+</span></span>
+<span id="cb7-11"><a href="#cb7-11"></a>  <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">fill =</span> <span class="st">"A"</span>)) <span class="sc">+</span></span>
+<span id="cb7-12"><a href="#cb7-12"></a>  mytidyfunctions<span class="sc">::</span><span class="fu">geom_segment_point</span>(</span>
+<span id="cb7-13"><a href="#cb7-13"></a>    <span class="fu">aes</span>(<span class="at">y =</span> z, <span class="at">color =</span> <span class="st">"B"</span>),</span>
+<span id="cb7-14"><a href="#cb7-14"></a>    <span class="at">num =</span> <span class="dv">100</span>) <span class="sc">+</span></span>
+<span id="cb7-15"><a href="#cb7-15"></a>  mytidyfunctions<span class="sc">::</span><span class="fu">geom_dotted</span>() <span class="sc">+</span></span>
+<span id="cb7-16"><a href="#cb7-16"></a>  mytidyfunctions<span class="sc">::</span><span class="fu">geom_text_bi</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
@@ -748,7 +748,7 @@ Package making in R
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
 <span id="cb8-2"><a href="#cb8-2"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> map_ent) <span class="sc">+</span></span>
 <span id="cb8-3"><a href="#cb8-3"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> red) <span class="sc">+</span></span>
-<span id="cb8-4"><a href="#cb8-4"></a>  mytidyfunctions<span class="sc">::</span><span class="fu">add_zoom</span>(a) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-4"><a href="#cb8-4"></a>  mytidyfunctions<span class="sc">::</span><span class="fu">add_zoom</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
