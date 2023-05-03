@@ -56,7 +56,7 @@ Projects
 For this project, I created a dashboard to visualize Mexico's public spending from open budget data for the last ten years.
 
 
-The data was processed with **{data.table}** and the dashboard built with **{shiny}**. It can be consulted <a href="https://javier-mtz-rd.shinyapps.io/dashboard_presupuesto/">here</a>.
+The data was processed with **{data.table}** and the dashboard built with **{shiny}**. It can be partially consulted <a href="https://javier-mtz-rd.shinyapps.io/dashboard_presupuesto/">here</a>.
 
 :::
 <br>
