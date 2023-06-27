@@ -56,7 +56,7 @@ Projects
 For this project, I created a dashboard to visualize Mexico's public spending from open budget data for the last ten years.
 
 
-The data was processed with **{data.table}** and the dashboard built with **{shiny}**. It can be partially consulted <a href="https://javier-mtz-rd.shinyapps.io/dashboard_presupuesto/">here</a>.
+The data was processed with **{data.table}** and the dashboard built with **{shiny}**. It can be consulted <a href="https://javier-mtz-rd.shinyapps.io/dashboard_presupuesto/">here</a>.
 
 :::
 <br>
@@ -384,15 +384,15 @@ data <- tibble(x = 1:10,
        z = sample(1:365, 10, replace = TRUE)) 
 
 data %>% 
-  ggplot(aes(x = x)) +
-  geom_col(aes(y = y, fill = "A")) +
+  ggplot(aes(x = x, 
+             y = y, 
+             label = y)) +
+  geom_col(aes(fill = "A")) +
   mytidyfunctions::geom_segment_point(
     aes(y = z, color = "B"),
     num = 100) +
-  mytidyfunctions::geom_dotted(
-    aes(y = y)) +
-  mytidyfunctions::geom_text_bi(
-    aes(label = y, y = y)) 
+  mytidyfunctions::geom_dotted() +
+  mytidyfunctions::geom_text_bi() 
   
 
 ```
@@ -494,7 +494,7 @@ Additionally, I built some functions to work with maps in {ggplot2}, as seen bel
 ggplot() +
   geom_sf(data = map_ent) +
   geom_sf(data = red) +
-  mytidyfunctions::add_zoom(a) 
+  mytidyfunctions::add_zoom() 
 
 ```
 
@@ -508,7 +508,7 @@ map_ent <- read_sf("01_datos_brutos/shp estatal/ent_simp.shp")
 red <- read_sf("01_datos_brutos/iii_1_4_red_tren_1/iii_1_4_red_tren_1.shp") %>% 
   clean_names()
 
-a <- ggplot() +
+ggplot() +
   geom_sf(data = map_ent,
           fill = "grey92",
           linewidth = 0.1,
@@ -517,11 +517,22 @@ a <- ggplot() +
           linewidth = 0.3,
           alpha = 0.9,
           color = "#5DAAA8") +
-  theme_maps_jmr(legend.position = c(0.75, 0.85)) +
-  guides(linetype = F)
+  # ggplot2::geom_rect(data = 
+  #                                                  data.frame(xmin = -100.29,
+  #                                                             xmax = -93.71,
+  #                                                             ymin =  15.6,
+  #                                                             ymax =  20.21),
+  #                                                aes(xmin = xmin, 
+  #                                                    xmax = xmax,
+  #                                                    ymin = ymin, 
+  #                                                    ymax = ymax),
+  #                                                linewidth = 0.35,
+  #                                                fill = "transparent",
+  #                                                color = "grey10") +
+  mytidyfunctions::theme_maps_jmr(legend.position = c(0.75, 0.85)) +
+  guides(linetype = F) +
+  mytidyfunctions::add_zoom()
 
-  mytidyfunctions::add_zoom(a)
-  
 ```
 
 
@@ -1037,13 +1048,13 @@ This work received the "Contar(nos)" journalism award.
 
 * For this project, I used **{tidyverse}**, **{sf}**, **{raster}**, **{rgdal}** and **{rgeos}**.
 
-* <a href="https://www.eluniversal.com.mx/interactivos/2021/sembrando-vida-contra-la-selva-maya/#:~:text=JAVIER%20MART%C3%8DNEZ%20COLABOR%C3%93%20CON%20EL%20AN%C3%81LISIS%20GEOGR%C3%81FICO">
+* <a href="https://web.archive.org/web/20211201144911/https://www.eluniversal.com.mx/interactivos/2021/sembrando-vida-contra-la-selva-maya/#:~:text=JAVIER%20MART%C3%8DNEZ%20COLABOR%C3%93%20CON%20EL%20AN%C3%81LISIS%20GEOGR%C3%81FICO">
 Credits at the end of the post.
 </a>
 
 Publication:
 <div style="text-indent: -40px; padding-left: 40px">
-<p><a href="https://www.eluniversal.com.mx/interactivos/2021/sembrando-vida-contra-la-selva-maya/">
+<p><a href="https://web.archive.org/web/20211201144911/https://www.eluniversal.com.mx/interactivos/2021/sembrando-vida-contra-la-selva-maya/">
 Carabaña, Carlos. “Sembrando Vida contra la Selva Maya.” El Universal, November 29, 2021.
 </a></p>
 
@@ -1056,7 +1067,7 @@ Carabaña, Carlos. “Sembrando Vida contra la Selva Maya.” El Universal, Nove
 ![](06_imagenes/sv/sv1.png){fig-align="center" width="400"}
 
 <p align="center">
-<iframe width="400"  src="https://www.eluniversal.com.mx/interactivos/2021/sembrando-vida-contra-la-selva-maya/assets/img/grafico_02.svg" title="Plot 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="400"  src="https://web.archive.org/web/20211130013524im_/https://www.eluniversal.com.mx/interactivos/2021/sembrando-vida-contra-la-selva-maya/assets/img/grafico.svg" title="Plot 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </p>
 
 :::
