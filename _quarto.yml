@@ -1,0 +1,17 @@
+project:
+  type: website
+
+website:
+  favicon: assets/img/logo.ico
+  image: assets/img/logo.png
+
+format: 
+  html:
+    theme:
+      light:
+        - cosmo
+    highlight-style: a11y
+    code-link: true
+
+execute: 
+  freeze: auto
